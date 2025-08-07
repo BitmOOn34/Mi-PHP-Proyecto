@@ -1,0 +1,196 @@
+/* === Fondo general para todas las páginas === */
+body {
+    background: url('fondos/fondo_recetas.jpg') no-repeat center center fixed;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* === Estilos específicos para login y registro === */
+.login-body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-container {
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 30px 40px;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    width: 350px;
+    max-width: 90%;
+    text-align: center;
+}
+
+.login-container h2 {
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
+.login-container input[type="email"],
+.login-container input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+.login-container button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 15px;
+    background-color: #ff6f00;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.login-container button:hover {
+    background-color: #e65c00;
+}
+
+.btn-invitado {
+    background-color: #888 !important;
+}
+
+.btn-invitado:hover {
+    background-color: #777 !important;
+}
+
+.mensaje {
+    color: red;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.registro-link {
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+/* === Estilos para la página de recetas === */
+.container {
+    background-color: rgba(255, 255, 255, 0.96);
+    padding: 30px 40px;
+    margin: 40px auto;
+    border-radius: 15px;
+    max-width: 1200px;
+    box-shadow: 0 0 18px rgba(0, 0, 0, 0.3);
+}
+
+h1, h2 {
+    text-align: center;
+    color: #444;
+}
+
+input[type="text"], input[type="number"], textarea, select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #e67e22;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    margin: 5px 5px 10px 0;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #d35400;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+table th, table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    vertical-align: top;
+    text-align: left;
+}
+
+table th {
+    background-color: #f39c12;
+    color: white;
+}
+
+table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.imagen-portada img {
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+form {
+    margin-top: 20px;
+}
+
+form[action="comentarios.php"] {
+    margin-top: 10px;
+}
+
+/* === Nuevos estilos agregados === */
+
+/* Selector de calificación */
+.rating-select {
+    padding: 4px;
+    border-radius: 6px;
+}
+
+/* Mensaje cuando no hay imagen */
+.sin-imagen {
+    font-style: italic;
+    color: #777;
+}
+
+/* Fila de comentarios con fondo más claro */
+.comentario-fila {
+    background: #fafafa;
+    text-align: left;
+}
+
+/* Barra de sesión en la parte superior */
+.session-bar {
+    text-align: right;
+    margin-bottom: 10px;
+}
+
+/* Mensajes de alerta en rojo */
+.alert-red {
+    color: red;
+}
+
+/* Contenedor para calificaciones */
+.calificacion-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+}
