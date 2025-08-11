@@ -1,0 +1,306 @@
+/* ===========================
+   BASE GLOBAL Y TIPOGRAFÍA
+============================ */
+
+body {
+    background: url('fondos/fondo_recetas.jpg') no-repeat center center fixed;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+h1, h2 {
+    text-align: center;
+    color: #444;
+}
+
+/* ===========================
+   UTILIDADES REUTILIZABLES
+============================ */
+
+.input-control {
+    width: 100%;
+    padding: 10px 12px;
+    margin: 6px 0 16px 0;
+    border: 1.5px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+.input-control:focus {
+    border-color: #5a9bd8;
+    outline: none;
+}
+
+.btn {
+    background-color: #e67e22;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    margin: 5px 5px 10px 0;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #d35400;
+}
+
+/* Botón específico para login */
+.btn-login {
+    background-color: #ff6f00;
+}
+
+.btn-login:hover {
+    background-color: #e65c00;
+}
+
+/* Botón para usuarios invitados */
+.btn-invitado {
+    background-color: #888 !important;
+}
+
+.btn-invitado:hover {
+    background-color: #777 !important;
+}
+
+/* ===========================
+   LOGIN Y REGISTRO
+============================ */
+
+.login-body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-container {
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 30px 40px;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    width: 350px;
+    max-width: 90%;
+    text-align: center;
+}
+
+.login-container h2 {
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
+.login-container input[type="email"],
+.login-container input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+.login-container button {
+    width: 100%;
+    margin-top: 15px;
+}
+
+/* ===========================
+   FORMULARIOS
+============================ */
+
+form {
+    margin-top: 20px;
+}
+
+form[action="comentarios.php"] {
+    margin-top: 10px;
+}
+
+form label {
+    display: block;
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 6px;
+    color: #333;
+}
+
+/* ===========================
+   CONTENEDOR PRINCIPAL
+============================ */
+
+.container {
+    background-color: rgba(255, 255, 255, 0.96);
+    padding: 30px 40px;
+    margin: 40px auto;
+    border-radius: 15px;
+    max-width: 1200px;
+    box-shadow: 0 0 18px rgba(0, 0, 0, 0.3);
+}
+
+/* ===========================
+   TABLA DE RECETAS
+============================ */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    font-size: 14px;
+}
+
+table th {
+    background-color: #e67e22;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 14px;
+    letter-spacing: 1px;
+    text-align: left;
+}
+
+table td {
+    color: #333;
+    padding: 12px;
+    vertical-align: top;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+table tr:nth-child(odd) {
+    background-color: #fff;
+}
+
+/* ===========================
+   IMAGEN PORTADA
+============================ */
+
+.imagen-portada img {
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+/* ===========================
+   ELEMENTOS VARIOS
+============================ */
+
+.rating-select {
+    padding: 4px;
+    border-radius: 6px;
+}
+
+.sin-imagen {
+    font-style: italic;
+    color: #777;
+}
+
+.comentario-fila {
+    background: #fafafa;
+    text-align: left;
+}
+
+.session-bar {
+    text-align: right;
+    margin-bottom: 10px;
+}
+
+.alert-red {
+    color: red;
+}
+
+.calificacion-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+}
+
+/* ===========================
+   DISEÑO RESPONSIVO
+============================ */
+
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+        margin: 20px auto;
+    }
+
+    .imagen-portada img {
+        max-height: 180px;
+    }
+
+    table {
+        border: 0;
+    }
+
+    thead {
+        display: none;
+    }
+
+    tr {
+        margin-bottom: 15px;
+        display: block;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        padding: 10px;
+        background-color: #fff;
+    }
+
+    td {
+        display: block;
+        text-align: right;
+        font-size: 14px;
+        border: none;
+        border-bottom: 1px solid #eee;
+        position: relative;
+        padding-left: 50%;
+        box-sizing: border-box;
+    }
+
+    td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 10px;
+        top: 12px;
+        font-weight: bold;
+        color: #e67e22;
+        text-transform: uppercase;
+        font-size: 12px;
+        text-align: left;
+        width: 45%;
+        white-space: nowrap;
+    }
+
+    td:last-child {
+        border-bottom: none;
+    }
+
+    form {
+        font-size: 14px;
+    }
+
+    .input-control,
+    .btn {
+        font-size: 14px;
+    }
+
+    .session-bar {
+        text-align: center;
+    }
+}
