@@ -2,7 +2,7 @@
 include 'db.php';
 include 'RecetaModel.php';
 
-if (isset($_POST['id'], $_POST['calificacion'])) {
+if (isset($_POST['id'], $_POST['calificacion']) && false) {
     $id = intval($_POST['id']);
     $calificacion = floatval($_POST['calificacion']);
 
