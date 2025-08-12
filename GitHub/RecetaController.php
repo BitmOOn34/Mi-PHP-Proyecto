@@ -28,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             mkdir($uploadDir, 0755, true);
         }
         // Generar nombre único para evitar colisiones
-        $nombreArchivo = uniqid() . '-' . basename($_FILES['imagen']['name']);
+        $nombreArchivo = uniqid() . '-' . preg_replace('/[^a-zA-Z0-9._-]/', '', basename($_FILES['imagen']['name']));
         $rutaImagen = $uploadDir . $nombreArchivo;
 
         // Mover archivo al directorio de destino
