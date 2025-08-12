@@ -59,17 +59,17 @@ function checkOwnershipOrAbort(RecetaModel $model, ?int $id, int $usuario_id): v
 // Ejecutar la acción solicitada
 switch ($action) {
     case 'add':
-        $model->agregarReceta($nombre, $ingredientes, $instrucciones, $tiempo, $porciones, $categoria, $imagen, $usuario_id);
+        $model->agregarReceta($usuario_id, $nombre, $ingredientes, $instrucciones, $tiempo, $porciones, $categoria, $imagen);
         break;
 
     case 'update':
         checkOwnershipOrAbort($model, $id, $usuario_id);
-        $model->actualizarReceta($id, $nombre, $ingredientes, $instrucciones, $tiempo, $porciones, $categoria, $imagen);
+        $model->actualizarReceta($id, $usuario_id, $nombre, $ingredientes, $instrucciones, $tiempo, $porciones, $categoria, $imagen);
         break;
 
     case 'delete':
         checkOwnershipOrAbort($model, $id, $usuario_id);
-        $model->eliminarReceta($id);
+        $model->eliminarReceta($id, $usuario_id);
         break;
 
     default:
