@@ -141,4 +141,14 @@ class RecetaModel {
         }
         return null;
     }
+
+    // método para actualizar la calificación de una receta
+    public function actualizarCalificacion(int $receta_id, float $nuevaCalificacion): void {
+        $stmt = $this->conn->prepare("UPDATE recetas SET calificacion = ? WHERE id = ?");
+        $stmt->bind_param("di", $nuevaCalificacion, $receta_id);
+        if (!$stmt->execute()) {
+            throw new Exception("Error al actualizar calificación: " . $stmt->error);
+        }
+        $stmt->close();
+    }
 }
