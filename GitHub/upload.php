@@ -70,6 +70,6 @@ function executeQuery($conn, $sql, $types, ...$params) {
         throw new Exception("Error al ejecutar la consulta: " . $stmt->error);
     }
 
-    return $stmt; // Puedes usar ->get_result() si esperas resultados
+    return $stmt;
 }
 
