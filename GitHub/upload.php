@@ -46,10 +46,30 @@ function uploadImage($file) {
 /**
  * Ejecuta una consulta preparada de forma segura.
  * 
- * @param mysqli $conn
- * @param string $sql
- * @param string $types
- * @param mixed ...$params
- * @throws Exception
+ * @param mysqli $conn Conexión a la base de datos.
+ * @param string $sql Consulta SQL con placeholders (?).
+ * @param string $types Tipos de datos de los parámetros (ej. "ssi").
+ * @param mixed ...$params Parámetros variables a enlazar en la consulta.
+ * @return mysqli_stmt|false El statement ejecutado o false si falla.
+ * @throws Exception Si hay un error al preparar o ejecutar la consulta.
  */
-function executeQuery($conn, $sql, $types,
+function executeQuery($conn, $sql, $types, ...$params) {
+    // Preparar la consulta
+    $stmt = $conn->prepare($sql);
+    if (!$stmt) {
+        throw new Exception("Error al preparar la consulta: " . $conn->error);
+    }
+
+    // Enlazar parámetros si existen
+    if (!empty($params)) {
+        $stmt->bind_param($types, ...$params);
+    }
+
+    // Ejecutar la consulta
+    if (!$stmt->execute()) {
+        throw new Exception("Error al ejecutar la consulta: " . $stmt->error);
+    }
+
+    return $stmt; // Puedes usar ->get_result() si esperas resultados
+}
+
